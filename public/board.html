@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Ticket Dashboard</title>
+    <link rel="stylesheet" href="board-styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>🎫 Support Dashboard</h1>
+                <div class="header-actions">
+                    <span id="userInfo" class="user-info">👤 Loading...</span>
+                    <button id="refreshBtn" class="refresh-btn">🔄 Refresh</button>
+                    <a href="/submit" class="submit-link">📝 Submit Ticket</a>
+                    <button id="logoutBtn" class="logout-btn">🚪 Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalTickets">0</div>
+                <div class="stat-label">Total Tickets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="openTickets">0</div>
+                <div class="stat-label">Open</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="inProgressTickets">0</div>
+                <div class="stat-label">In Progress</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="resolvedTickets">0</div>
+                <div class="stat-label">Resolved</div>
+            </div>
+        </div>
+
+        <div class="dashboard-filters">
+            <div class="filter-group">
+                <label for="statusFilter">Status:</label>
+                <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="open">Open</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="resolved">Resolved</option>
+                    <option value="closed">Closed</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="priorityFilter">Priority:</label>
+                <select id="priorityFilter">
+                    <option value="">All Priorities</option>
+                    <option value="urgent">Urgent</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <input type="text" id="searchFilter" placeholder="Search tickets...">
+            </div>
+        </div>
+
+        <main class="dashboard-main">
+            <div class="tickets-container">
+                <div class="tickets-header">
+                    <h2>Support Tickets</h2>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">📋 Grid</button>
+                        <button class="view-btn" data-view="list">📄 List</button>
+                    </div>
+                </div>
+
+                <div class="tickets-grid" id="ticketsContainer">
+                    <!-- Tickets will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Ticket Detail Modal -->
+    <div id="ticketModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Ticket Details</h2>
+                <button class="close-btn" onclick="closeTicketModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Ticket details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading tickets...</div>
+    </div>
+
+    <!-- Message Container -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <script src="board-script.js"></script>
+</body>
+</html>

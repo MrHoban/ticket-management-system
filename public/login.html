@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Login - Ticket System</title>
+    <link rel="stylesheet" href="login-styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>🔐 Staff Login</h1>
+                <p>Access the ticket management dashboard</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span class="btn-text">Login</span>
+                    <span class="btn-loading" style="display: none;">Logging in...</span>
+                </button>
+            </form>
+
+            <div class="login-info">
+                <div class="info-section">
+                    <h3>🎫 Ticket System Access</h3>
+                    <p>This login provides access to:</p>
+                    <ul>
+                        <li>Ticket Dashboard</li>
+                        <li>Ticket Management</li>
+                        <li>Status Updates</li>
+                        <li>Staff Assignment</li>
+                        <li>Note System</li>
+                    </ul>
+                </div>
+
+                <div class="demo-credentials">
+                    <h4>Demo Credentials</h4>
+                    <div class="credentials">
+                        <strong>Username:</strong> admin<br>
+                        <strong>Password:</strong> admin123
+                    </div>
+                </div>
+
+                <div class="customer-link">
+                    <p>Are you a customer?</p>
+                    <a href="/submit">Submit a Support Ticket</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background pattern temporarily removed for testing -->
+        <!-- <div class="background-pattern"></div> -->
+    </div>
+
+    <!-- Message Container -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <script src="login-script.js"></script>
+</body>
+</html>

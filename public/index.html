@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎫 Ticket Management System</h1>
+            <p>Submit and track support tickets</p>
+        </header>
+
+        <main>
+            <!-- Ticket Submission Form -->
+            <section class="form-section">
+                <h2>Submit New Ticket</h2>
+                <form id="ticketForm" class="ticket-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deviceName">Device Name *</label>
+                        <input type="text" id="deviceName" name="deviceName" required 
+                               placeholder="e.g., iPhone 12, Dell Laptop, Samsung Galaxy">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description (Optional)</label>
+                        <textarea id="description" name="description" rows="4" 
+                                  placeholder="Describe the issue or request..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Ticket</button>
+                </form>
+            </section>
+
+            <!-- Ticket Board -->
+            <section class="board-section">
+                <div class="board-header">
+                    <h2>Ticket Board</h2>
+                    <div class="board-stats">
+                        <span id="totalTickets">Total: 0</span>
+                        <button id="refreshBtn" class="refresh-btn">🔄 Refresh</button>
+                    </div>
+                </div>
+
+                <div class="ticket-board" id="ticketBoard">
+                    <!-- Tickets will be dynamically loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

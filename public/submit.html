@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Support Ticket</title>
+    <link rel="stylesheet" href="submit-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎫 Submit Support Ticket</h1>
+            <p>Need help? Submit a support ticket and our team will assist you.</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <form id="ticketForm" class="ticket-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deviceName">Device/Equipment *</label>
+                            <input type="text" id="deviceName" name="deviceName" required 
+                                   placeholder="e.g., iPhone 12, Dell Laptop, Samsung Galaxy">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Issue Description</label>
+                        <textarea id="description" name="description" rows="6" 
+                                  placeholder="Please describe the issue you're experiencing in detail..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Submit Ticket</span>
+                            <span class="btn-loading" style="display: none;">Submitting...</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <div class="success-content">
+                        <div class="success-icon">✅</div>
+                        <h3>Ticket Submitted Successfully!</h3>
+                        <p>Your ticket has been submitted and assigned ID: <strong id="ticketId"></strong></p>
+                        <p>Our support team will review your request and get back to you soon.</p>
+                        <button onclick="submitAnother()" class="secondary-btn">Submit Another Ticket</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-sidebar">
+                <div class="info-card">
+                    <h3>📞 Need Immediate Help?</h3>
+                    <p>For urgent issues, call our support hotline:</p>
+                    <div class="phone-number">1-800-SUPPORT</div>
+                    <small>Available 24/7 for critical issues</small>
+                </div>
+
+                <div class="info-card">
+                    <h3>⏱️ Response Times</h3>
+                    <ul class="response-times">
+                        <li><span class="priority urgent">Urgent:</span> Within 1 hour</li>
+                        <li><span class="priority high">High:</span> Within 4 hours</li>
+                        <li><span class="priority medium">Medium:</span> Within 24 hours</li>
+                        <li><span class="priority low">Low:</span> Within 3 days</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>💡 Tips for Better Support</h3>
+                    <ul class="tips">
+                        <li>Be specific about the issue</li>
+                        <li>Include error messages if any</li>
+                        <li>Mention when the issue started</li>
+                        <li>Describe steps you've already tried</li>
+                    </ul>
+                </div>
+
+                <div class="staff-link">
+                    <a href="/board" class="staff-btn">🔧 Staff Dashboard</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Error Messages -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <script src="submit-script.js"></script>
+</body>
+</html>
