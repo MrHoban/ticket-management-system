@@ -22,16 +22,16 @@
     "dashboard",
     "ticket-management"
   ],
-  "author": "Your Name",
+  "author": "MrHoban",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ticket-management-system.git"
+    "url": "https://github.com/MrHoban/ticket-management-system.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/ticket-management-system/issues"
+    "url": "https://github.com/MrHoban/ticket-management-system/issues"  
   },
-  "homepage": "https://github.com/yourusername/ticket-management-system#readme",
+  "homepage": "https://github.com/MrHoban/ticket-management-system#readme",
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=6.0.0"
