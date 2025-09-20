@@ -1,0 +1,47 @@
+{
+  "name": "ticket-management-system",
+  "version": "1.0.0",
+  "description": "A professional ticket management system with customer submission portal and staff dashboard featuring admin authentication, ticket lifecycle management, and real-time updates.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "python test_auth.py && python test_workflow.py",
+    "setup": "npm install && pip install -r requirements.txt",
+    "clean": "rm -f tickets.json ticket_report.txt",
+    "demo": "node server.js"
+  },
+  "keywords": [
+    "ticket-system",
+    "support-tickets",
+    "customer-service",
+    "help-desk",
+    "nodejs",
+    "express",
+    "authentication",
+    "dashboard",
+    "ticket-management"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ticket-management-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ticket-management-system/issues"
+  },
+  "homepage": "https://github.com/yourusername/ticket-management-system#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "uuid": "^13.0.0"
+  }
+}
