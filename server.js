@@ -409,7 +409,7 @@ app.get('/ticket/:id', requireAuth, (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`🎫 Ticket App Server running on http://localhost:${PORT}`);
+    console.log(`🎫 Ticket Management System v2.0 running on http://localhost:${PORT}`);
     console.log(`📊 API endpoints available at http://localhost:${PORT}/api/tickets`);
 });
 
