@@ -114,6 +114,11 @@ app.get('/api/auth/status', (req, res) => {
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Add some debugging for deployment
+console.log('📁 Current directory:', __dirname);
+console.log('📁 Public directory:', path.join(__dirname, 'public'));
+console.log('📁 Files in public:', require('fs').readdirSync(path.join(__dirname, 'public')).join(', '));
+
 // Data persistence setup
 const DATA_FILE = path.join(__dirname, 'tickets.json');
 
