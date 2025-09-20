@@ -117,7 +117,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Add some debugging for deployment
 console.log('📁 Current directory:', __dirname);
 console.log('📁 Public directory:', path.join(__dirname, 'public'));
-console.log('📁 Files in public:', require('fs').readdirSync(path.join(__dirname, 'public')).join(', '));
+
+// Check if public directory exists before trying to read it
+const publicDir = path.join(__dirname, 'public');
+if (fs.existsSync(publicDir)) {
+    console.log('📁 Files in public:', fs.readdirSync(publicDir).join(', '));
+} else {
+    console.log('❌ Public directory does not exist!');
+    console.log('📁 Available directories:', fs.readdirSync(__dirname).filter(item =>
+        fs.statSync(path.join(__dirname, item)).isDirectory()
+    ).join(', '));
+}
 
 // Data persistence setup
 const DATA_FILE = path.join(__dirname, 'tickets.json');
